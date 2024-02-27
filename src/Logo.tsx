@@ -1,5 +1,12 @@
 import React from 'react';
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {
+	Img,
+	interpolate,
+	spring,
+	staticFile,
+	useCurrentFrame,
+	useVideoConfig,
+} from 'remotion';
 
 export const Logo: React.FC<{
 	logoColor: string;
@@ -23,7 +30,11 @@ export const Logo: React.FC<{
 
 	return (
 		<div>
-			<svg
+			<Img
+				style={{transform: `translateY(${wave1}px)`}}
+				src={staticFile('icon-144x144.png')}
+			/>
+			{/* <svg
 				style={{transform: `translateY(${wave1}px)`}}
 				className="absolute"
 				height={120}
@@ -43,7 +54,7 @@ export const Logo: React.FC<{
 					d="M12 10.146C13.701 3.382 17.954 0 24.758 0C31.0815 0 33.9775 2.92151 36.4794 5.44536L36.48 5.446C38.015 6.995 39.403 8.395 41.344 8.878C44.746 9.723 47.723 8.455 50.275 5.073C48.574 11.837 44.321 15.218 37.517 15.218C31.1925 15.218 28.2975 12.2975 25.7956 9.77365L25.795 9.773C24.26 8.223 22.872 6.823 20.93 6.341C17.529 5.496 14.552 6.764 12 10.146Z"
 					style={{fill: logoColor}}
 				/>
-			</svg>
+			</svg> */}
 		</div>
 	);
 };
